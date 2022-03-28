@@ -1150,8 +1150,8 @@ unix-command:
   #filename: custom.socket
 
 # Magic file. The extension .mgc is added to the value here.
-#magic-file: /usr/share/file/magic
-@e_magic_file_comment@magic-file: @e_magic_file@
+magic-file: /usr/share/file/magic
+#@e_magic_file_comment@magic-file: @e_magic_file@
 
 # GeoIP2 database file. Specify path and filename of GeoIP2 database
 # if using rules with "geoip" rule option.
@@ -1624,7 +1624,7 @@ profiling:
     limit: 10
 
     # output to json
-    json: @e_enable_evelog@
+    json: yes
 
   # per keyword profiling
   keywords:
