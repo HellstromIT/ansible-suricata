@@ -87,16 +87,16 @@ outputs:
   # Extensible Event Format (nicknamed EVE) event log in JSON format
   - eve-log:
       enabled: yes
-      filetype: regular #regular|syslog|unix_dgram|unix_stream|redis
-      filename: eve.json
+      filetype: syslog #regular|syslog|unix_dgram|unix_stream|redis
+      #filename: eve.json
       # Enable for multi-threaded eve.json output; output files are amended with
       # with an identifier, e.g., eve.9.json
       #threaded: false
       #prefix: "@cee: " # prefix to prepend to each log entry
       # the following are valid when type: syslog above
-      #identity: "suricata"
-      #facility: local5
-      #level: Info ## possible levels: Emergency, Alert, Critical,
+      identity: "suricata"
+      facility: local5
+      level: Info ## possible levels: Emergency, Alert, Critical,
                    ## Error, Warning, Notice, Info, Debug
       #ethernet: no  # log ethernet header in events when available
       #redis:
@@ -140,7 +140,7 @@ outputs:
       # helpful when reviewing alerts for traffic that is being reverse
       # or forward proxied.
       xff:
-        enabled: no
+        enabled: yes
         # Two operation modes are available: "extra-data" and "overwrite".
         mode: extra-data
         # Two proxy deployments are supported: "reverse" and "forward". In
@@ -287,7 +287,7 @@ outputs:
             # passwords: yes           # enable output of passwords
         - http2
         - pgsql:
-            enabled: no
+            enabled: yes
             # passwords: yes           # enable output of passwords. Disabled by default
         - stats:
             totals: yes       # stats for all threads merged together
